@@ -10,14 +10,15 @@ to view the repository for the frontend of Calorie Extraction.
 
 1. Clone the repository
 2. Install the dependencies with `npm install`
-3. Create a new Firebase project and enable the Firestore database
-4. Create a new service account and generate a private key file
-5. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of
+3. Install firebase-tools globally by running `npm install -g firebase-tools`
+4. Create a new Firebase project and enable the Firestore database
+5. Create a new service account and generate a private key file
+6. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of
 the private key file
-6. Rename the `.firebaserc.example` file to exclude `.example` and replace
+7. Rename the `.firebaserc.example` file to exclude `.example` and replace
 `FIREBASE_PROJECT_ID` with your Firebase's Project ID.
-7. Run `firebase use <project-id>` to select the project
-8. Run `firebase deploy --only functions` to deploy the functions
+8. Run `firebase use <project-id>` to select the project
+9. Run `firebase deploy --only functions` to deploy the functions
 
 ## Development
 
