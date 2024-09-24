@@ -1,0 +1,68 @@
+# Calorie Extraction Backend
+
+This project is a serverless application that extracts data from a website and
+stores it in a Firestore database.
+
+Click [here](https://github.com/Tyree-McPherson/calorie-extraction-frontend)
+to view the repository for the frontend of Calorie Extraction.
+
+## Installation
+
+1. Clone the repository
+2. Install the dependencies with `npm install`
+3. Create a new Firebase project and enable the Firestore database
+4. Create a new service account and generate a private key file
+5. Set the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to the path of
+the private key file
+6. Rename the `.firebaserc.example` file to exclude `.example` and replace
+`FIREBASE_PROJECT_ID` with your Firebase's Project ID.
+7. Run `firebase use <project-id>` to select the project
+8. Run `firebase deploy --only functions` to deploy the functions
+
+## Development
+
+To run the development environment, cd into `functions` and run `npm start`.
+
+## Usage
+
+The functions can be called with an HTTP request. The request should contain
+the following data:
+
+* `userId`: The ID of the user in the Firestore database
+* `collection`: The name of the collection in the Firestore database
+* `documentData`: The data to be updated in the Firestore database
+
+The functions will return a JSON response with the following data:
+
+* `valid`: A boolean indicating whether the request was valid or not
+* `message`: A string describing the result of the request
+* `status`: The HTTP status code of the response
+
+## Functions
+
+### `getCollection`
+
+This function retrieves a collection from the Firestore database and returns
+it as a JSON response.
+
+### `updateCollection`
+
+This function updates a collection in the Firestore database with the data
+provided in the request.
+
+### `signup`
+
+This function creates a new user with the provided email and password and
+returns a JSON response with the user's data.
+
+## Firebase Emulators
+
+The Firebase Emulators can be used to run the backend locally. To start the
+emulators, run `firebase emulators:start --only functions,firestore,auth`.
+
+## Deploying to Firebase
+
+To deploy the backend to Firebase, cd into `functions` and run
+`npm run deploy`. This will deploy the
+functions to your Firebase project and make them available at
+`https://<server-region>-<project-id>.cloudfunctions.net/<function-name>`.
