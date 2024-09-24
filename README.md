@@ -63,6 +63,9 @@ emulators, run `firebase emulators:start --only functions,firestore,auth`.
 
 ## Deploying to Firebase
 
+Add a `.env.production` file in the `functions` directory. Add a `ORIGIN`
+key with the domain name of your website as the value.
+
 To deploy the backend to Firebase, cd into `functions` and run
 `npm run deploy`. This will deploy the
 functions to your Firebase project and make them available at

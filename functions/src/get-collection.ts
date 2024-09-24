@@ -17,7 +17,7 @@ Promise<any> => {
 
   response.set(
     "Access-Control-Allow-Origin",
-    "https://storage.googleapis.com"
+    process.env.ORIGIN
   );
 
   const contentType = request.headers["content-type"] ?? "";
